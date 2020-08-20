@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   get  'posts/new'
   post 'posts/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'posts/index'
-  #get '/posts', to: 'posts#index'
-  root 'posts#new'
+  get  'posts/index'
+  root 'posts#index'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html 
 end
