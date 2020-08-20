@@ -18,13 +18,13 @@ class PostsController < ApplicationController
   def create
 
     @post=Post.create(title: params[:post][:title],date: params[:post][:date],image_url: params[:post][:image_url],content: params[:post][:content]) 
-    @post.email = params[:post][:email].gsub('spoiler', '')
+    @post.content = params[:post][:content].gsub('spoiler', '')
     if @post.save
-			flash[:notice]='Usuario creado exitosamente'
-      redirect_to posts_index_path
-		else
-			flash[:error]='Ocurrió un error creando el usuario'
-			redirect_to posts_new_path
+      flash[:notice]=" Post publicado" 
+      redirect_to posts_path # notice:"Usuario creado exitosamente."
+    else
+      flash[:error]="Ocurrio un error Guardando el Post" 
+			redirect_to posts_path # error:"Ocurrió un error creando el usuario."
 		end
     
 	end

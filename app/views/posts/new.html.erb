@@ -1,6 +1,6 @@
 <h1>Posts#new</h1>
 
-<%= form_with model: @post, url: posts_create_path do |f| %>
+<%= form_with model: @post do |f| %>
   <% if @post.errors.any? %>
 	    <div id="error_explanation">
 	      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this task from being saved:</h2>
